@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class ProfileModel(models.Model):
     profile_username = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='profile_pic.jpg', upload_to='profile_pictures')
-    location = models.CharField(max_length=100)
+    location = models.CharField(max_length=100, blank=True, null=True)
     USER_TYPES_CHOICES = (
         ("SELECT", "SELECT"),
         ("RESTAURANT", "RESTAURANT"),
